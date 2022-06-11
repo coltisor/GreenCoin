@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from "./src/screens/Home/Home";
 import {Map} from "./src/screens/Map/Map";
 import {Rides} from "./src/screens/Rides/Rides";
-import { registerRootComponent } from 'expo';
+import { DappProvider } from "@elrondnetwork/dapp-core";
 
 
 const Stack = createNativeStackNavigator();
@@ -14,6 +14,10 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 
   return (
+    <DappProvider
+      environment="devnet"
+      customNetworkConfig={{ name: 'asd', apiTimeout: 6000 }}
+    >
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Login" component={Login} />
@@ -22,10 +26,9 @@ export default function App() {
           <Stack.Screen name="Rides" component={Rides} />
         </Stack.Navigator>
       </NavigationContainer>
+    </DappProvider>
   );
 }
-
-registerRootComponent(App);
 
 const styles = StyleSheet.create({
   container: {
