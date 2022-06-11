@@ -5,8 +5,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Headline } from 'react-native-paper';
 import { Subheading } from 'react-native-paper';
 import { globalStyles } from "../../styles/global";
-import { List, Divider } from 'react-native-paper';
-
 
 
 export const Home = (props: HomeScreenProps) => {
@@ -33,6 +31,14 @@ export const Home = (props: HomeScreenProps) => {
           onPress={() => { navigation.push("Ride"); }}
         >
           New Ride
+        </Button>
+
+        <Button 
+          mode="contained"
+          color="#5FD068"
+          onPress={() => { navigation.push("RideV2"); }}
+        >
+          New Ride On Map
         </Button>
       </View>
       

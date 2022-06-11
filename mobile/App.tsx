@@ -7,6 +7,7 @@ import { Home } from "./src/screens/Home/Home";
 import {Map} from "./src/screens/Map/Map";
 import {Rides} from "./src/screens/Rides/Rides";
 import {Ride} from "./src/screens/Ride/Ride";
+import { RideV2 } from "./src/screens/Ride/RideV2";
 
 
 const Stack = createNativeStackNavigator();
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} options={{ title:"Welcome, @rider", headerLeft: null }} />
         <Stack.Screen name="Map" component={Map} />
         <Stack.Screen name="Ride" component={Ride} />
+        <Stack.Screen name="RideV2" component={RideV2} />
         <Stack.Screen name="Rides" component={Rides} />
       </Stack.Navigator>
     </NavigationContainer>
