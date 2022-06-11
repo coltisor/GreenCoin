@@ -30,7 +30,7 @@ export const Home = (props: HomeScreenProps) => {
         <Button 
           mode="contained"
           color="#5FD068"
-          onPress={() => { navigation.push("Map"); console.log('click'); }}
+          onPress={() => { navigation.push("Ride"); }}
         >
           New Ride
         </Button>

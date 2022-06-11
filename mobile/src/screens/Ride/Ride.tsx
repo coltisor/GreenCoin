@@ -1,74 +1,55 @@
 import React from 'react';
 import { View } from "react-native";
-import { Button } from 'react-native-paper';
+import { TouchableOpacity } from "react-native";
 import { MapScreenProps } from "../RouteProps";
-import { Headline } from 'react-native-paper';
-import { Subheading } from 'react-native-paper';
+import MapView from 'react-native-maps';
+import { StyleSheet, Text, Dimensions } from 'react-native';
+import { FAB } from 'react-native-paper';
+import { colors } from "../../styles/colors";
 
 export const Ride = (props: MapScreenProps) => {
-  console.log('MAP');
-
-  const rides = [
-    {
-      date: "11 Jun 2022",
-      duration: 500,
-      green: 3,
-      distance: 750,
-      route: "",
-    },
-    {
-      date: "10 Jun 2022",
-      duration: 500,
-      green: 5,
-      distance: 2250,
-      route: "",
-    }
-  ];
 
   return (
-    <View style={styles.cards}>
-      {rides.map((item) => {
-        return (
-          <View style={styles.card}>
-            <View style={styles.green}>{item.green}</View>
-            <View style={styles.date}>{item.date}</View>
-            <View style={styles.details}>
-              <Subheading style={styles.duration}>{item.duration + "min"}</Subheading>
-              <Subheading style={styles.duration}>{item.distance + "KM"}</Subheading>
-            </View>
-          </View>
-        );
-      })}
+     <View style={styles.container}>
+      <MapView style={styles.map} />
+      <View style={styles.fabContainer}>
+        <TouchableOpacity
+          activeOpacity={0.8} 
+          onPress={() => { console.log('CLICK'); }}
+          style={styles.fab}>
+            <Text>Start</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-
-  }, 
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  map: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  },
+  fabContainer: {
+    position: 'absolute',
+    right: 0,
+    left: 0,
+    bottom: 128,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   fab: {
-    
+    backgroundColor: colors.p500,
+    width: 128,
+    height: 128,
+    borderRadius: 128,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  cards: {
-    gap: 8,
-  },
-  card: {
-    backgroundColor: "#5FD068",
-    padding: 8,
-    flexDirection: "row",
-    gap: 8,
-  },
-  green: {
-    width: 64,
-    height: 64,
-    borderRadius: 50,
-    backgroundColor: "#fff",
-  },
-  date: {
-
-  },
-  details: {
-    gap: 8,
-  }
 });
+
