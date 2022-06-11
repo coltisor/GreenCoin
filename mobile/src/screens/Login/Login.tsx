@@ -10,14 +10,11 @@ export const Login = (props: LoginScreenProps) => {
 
   return (
     <View>
-
       <DappUI.WalletConnectLoginContainer
         callbackRoute= "home"
         shouldRenderDefaultCss={false}
       />  
-      
       <Button onPress={() => { navigation.navigate('Home'); console.log('click'); }}>Login with Maiar</Button>
-      
     </View>
   )
 }
