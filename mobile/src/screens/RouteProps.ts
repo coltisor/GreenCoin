@@ -9,5 +9,5 @@ export type RootStackParamList = {
 
 export type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 export type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
-export type RidesScreenProps = NativeStackScreenProps<RootStackParamList, 'Rides'>;
 export type MapScreenProps = NativeStackScreenProps<RootStackParamList, 'Map'>;
+export type RidesScreenProps = NativeStackScreenProps<RootStackParamList, 'Rides'>;

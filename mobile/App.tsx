@@ -11,6 +11,7 @@ import {Rides} from "./src/screens/Rides/Rides";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+ 
   return (
     <NavigationContainer>
       <Stack.Navigator>
