@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from "../../components/Button/Button";
 import { View } from "react-native";
 import { LoginScreenProps } from '../RouteProps';
+import { AuthenticatedRoutesWrapper } from "@elrondnetwork/dapp-core";
 
 
 export const Login = (props: LoginScreenProps) => {
@@ -9,7 +10,15 @@ export const Login = (props: LoginScreenProps) => {
 
   return (
     <View>
-     <Button onPress={ () => {navigation.navigate('Home'); console.log('click');} }>Login with Maiar</Button>
+
+      <DappUI.WalletConnectLoginContainer
+        callbackRoute= "home"
+        shouldRenderDefaultCss={false}
+      />  
+      
+      <Button onPress={() => { navigation.navigate('Home'); console.log('click'); }}>Login with Maiar</Button>
+      
     </View>
   )
 }
+

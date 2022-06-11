@@ -6,21 +6,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from "./src/screens/Home/Home";
 import {Map} from "./src/screens/Map/Map";
 import {Rides} from "./src/screens/Rides/Rides";
+import { DappProvider } from "@elrondnetwork/dapp-core";
 
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
- 
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Home" component={Home}  options={{headerLeft: null}}/>
-        <Stack.Screen name="Map" component={Map} />
-        <Stack.Screen name="Rides" component={Rides}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <DappProvider
+      environment="devnet"
+      customNetworkConfig={{ name: 'asd', apiTimeout: 6000 }}
+    >
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Home" component={Home} options={{ headerLeft: null }} />
+          <Stack.Screen name="Map" component={Map} />
+          <Stack.Screen name="Rides" component={Rides} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </DappProvider>
   );
 }
 
