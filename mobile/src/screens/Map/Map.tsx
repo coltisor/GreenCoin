@@ -8,6 +8,7 @@ export const Map = (props: MapScreenProps) => {
   console.log('MAP');
   return (
    // <View><Button>Text</Button></View>
+   //ewjdbwefhbewuiginwkelfhqpwiejfdk
    //some text
      <DisplayMap/>
   )
