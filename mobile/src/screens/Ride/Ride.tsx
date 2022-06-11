@@ -1,12 +1,12 @@
 import React from 'react';
 import { View } from "react-native";
+import { Button } from 'react-native-paper';
+import { DisplayMap } from '../../components/Map/DisplayMap';
 import { MapScreenProps } from "../RouteProps";
+import { Headline } from 'react-native-paper';
 import { Subheading } from 'react-native-paper';
-import { Text } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
-import { Avatar } from 'react-native-paper';
 
-export const Rides = (props: MapScreenProps) => {
+export const Ride = (props: MapScreenProps) => {
   console.log('MAP');
 
   const rides = [
@@ -28,14 +28,14 @@ export const Rides = (props: MapScreenProps) => {
 
   return (
     <View style={styles.cards}>
-      {rides.map((item, index) => {
+      {rides.map((item) => {
         return (
-          <View style={styles.card} key={index}>
-            <Avatar.Text size={64} label={item.green.toString()} color="#5FD068" style={styles.green } />
-            <View style={styles.date}><Text>{item.date}</Text></View>
+          <View style={styles.card}>
+            <View style={styles.green}>{item.green}</View>
+            <View style={styles.date}>{item.date}</View>
             <View style={styles.details}>
-              <Subheading style={styles.detail}>{item.duration + "min"}</Subheading>
-              <Subheading style={styles.detail}>{item.distance + "KM"}</Subheading>
+              <Subheading style={styles.duration}>{item.duration + "min"}</Subheading>
+              <Subheading style={styles.duration}>{item.distance + "KM"}</Subheading>
             </View>
           </View>
         );
@@ -55,16 +55,15 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   card: {
-    flex: 1,
     backgroundColor: "#5FD068",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
+    padding: 8,
     flexDirection: "row",
     gap: 8,
-    justifyContent: "space-between",
-    alignItems: "center"
   },
   green: {
+    width: 64,
+    height: 64,
+    borderRadius: 50,
     backgroundColor: "#fff",
   },
   date: {
@@ -72,8 +71,5 @@ const styles = StyleSheet.create({
   },
   details: {
     gap: 8,
-  },
-  detail: {
-
-  },
+  }
 });
