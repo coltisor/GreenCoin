@@ -7,7 +7,8 @@ import {MapScreenProps} from "../RouteProps";
 export const Map = (props: MapScreenProps) => {
   console.log('MAP');
   return (
-    <View><Button>Text</Button></View>
-    // <DisplayMap/>
+   // <View><Button>Text</Button></View>
+   //some text
+     <DisplayMap/>
   )
 }
