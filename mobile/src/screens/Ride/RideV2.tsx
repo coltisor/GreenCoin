@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native";
 import { MapScreenProps } from "../RouteProps";
 import MapView from 'react-native-maps';
 import { Marker } from "react-native-maps";
-import { StyleSheet, Text, Dimensions } from 'react-native';
+import { StyleSheet, Text, Dimensions  } from 'react-native';
 import { colors } from "../../styles/colors";
 
 export const RideV2 = (props: MapScreenProps) => {
@@ -20,7 +20,7 @@ export const RideV2 = (props: MapScreenProps) => {
   return (
      <View style={styles.container}>
       <MapView style={styles.map} />
-      <Marker coordinate={tokyoRegion} />
+    
       <View style={styles.fabContainer}>
         <TouchableOpacity
           activeOpacity={0.8} 
@@ -29,6 +29,11 @@ export const RideV2 = (props: MapScreenProps) => {
             <Text>Start Ride</Text>
         </TouchableOpacity>
       </View>
+      <Marker
+            coordinate={{ latitude: 51.5072,
+                longitude: 0.1276}}
+             pinColor="green"
+          />
     </View>
   )
 }

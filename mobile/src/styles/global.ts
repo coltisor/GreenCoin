@@ -16,5 +16,8 @@ export const globalStyles = StyleSheet.create({
   },
   primaryButton: {
     color: "#5FD068",
+    marginLeft : 5
+  ,fontWeight : "bold" 
+
   }
 });
