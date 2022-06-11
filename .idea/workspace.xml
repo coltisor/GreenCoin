@@ -11,6 +11,7 @@
       <change afterPath="$PROJECT_DIR$/mobile/src/components/Button/Button.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/src/screens/Login/Login.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/src/screens/RouteProps.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
@@ -25,7 +26,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mobile" />
   </component>
   <component name="ProjectId" id="2AQVrAQe4vrU0qOQr4btrFJLhBZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
