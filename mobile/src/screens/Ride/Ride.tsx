@@ -24,6 +24,8 @@ export const Ride = (props: RideScreenProps) => {
 
   const mapRef = useRef<any>(null);
 
+  const ADDRESS = "erd14gxmyvmfd9j60sddwszhrhxktc5vn26gz296t0mjsvh44fjuvmxq0dxtev";
+
   /**
    * RECORD BTN
    */
@@ -49,7 +51,7 @@ export const Ride = (props: RideScreenProps) => {
   }, []);
 
   const updateLocation = () => {
-    console.log('CO');
+    // console.log('CO');
 
     (async () => {
       try {
@@ -65,7 +67,7 @@ export const Ride = (props: RideScreenProps) => {
         
         setLocation(location);
 
-        console.log(location);
+        // console.log(location);
       } catch (error) {
         console.log('Update Location: Error', error);
       }
@@ -122,17 +124,26 @@ export const Ride = (props: RideScreenProps) => {
     }
   }, [started]);
 
-  const mintCoins = () => {
+  const mintCoins = async () => {
     const distanceCalc = calculateDistanceFromCoords(route);
     //console.log(distanceCalc);
 
-    setTimeout(() => {
+    let promise = await fetch("https://greencoinhacktm.herokuapp.com/carbonHero", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify({
+        distance: 1000,
+        address: ADDRESS,
+      }),
+    });
 
-      setDistance(distanceCalc);
-      setGreen(Math.floor(Math.random() * 10) + 5);
-      
-      setStarted(3);
-    }, 2000);
+    let result = await promise.json();
+    console.log(result);
+    
+    setGreen(Math.floor(Math.random() * 10) + 5);
+    setStarted(3);
   }
 
   /**

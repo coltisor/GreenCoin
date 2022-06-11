@@ -17,9 +17,10 @@ export const Login = (props: LoginScreenProps) => {
         <View style={styles.logo}> 
           <Image style={{width: 200, height: 225}} source={require('./Logo.png')} />
         </View>
-{/* 
-        <Text style={styles.name}>GreenCoin</Text>
-        <Text style={styles.motto}>Ride Safe, Ride Green</Text> */}
+        {/* 
+          <Text style={styles.name}>GreenCoin</Text>
+          <Text style={styles.motto}>Ride Safe, Ride Green</Text> 
+        */}
       </View>
 
       <View style={styles.loginContainer}>
@@ -35,6 +36,7 @@ export const Login = (props: LoginScreenProps) => {
             <Text style={styles.buttonText}>Maiar app</Text>
         </Button>
       </View>
+
     </View>
   )
 }
