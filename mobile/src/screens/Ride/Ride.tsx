@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from "react-native";
 import { Button } from 'react-native-paper';
-import { DisplayMap } from '../../components/Map/DisplayMap';
 import { MapScreenProps } from "../RouteProps";
 import { Headline } from 'react-native-paper';
 import { Subheading } from 'react-native-paper';

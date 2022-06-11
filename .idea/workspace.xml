@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6ebc3bc-4544-4fa8-98c7-08dc047d2110" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.expo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/.idea/jsLinters/eslint.xml" afterDir="false" />
@@ -11,11 +14,11 @@
       <change afterPath="$PROJECT_DIR$/mobile/src/components/Button/Button.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/src/screens/Login/Login.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile/src/screens/RouteProps.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
