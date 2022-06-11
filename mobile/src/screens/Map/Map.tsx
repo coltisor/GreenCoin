@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-import { DisplayMap } from '../../components/Map/DisplayMap';
-import { Alert } from "react-native"
-import GetLocation from 'react-native-get-location'
+import React from 'react';
+import { View } from "react-native";
+import {MapScreenProps} from "../RouteProps";
 
-export const Map = () => {
-
- 
-
+export const Map = (props: MapScreenProps) => {
+  console.log('MAP');
   return (
     <DisplayMap/>
   )

@@ -1,10 +1,15 @@
-import React from 'react'
-import { Button } from "../../components/Button/Button"
+import React from 'react';
+import { Button } from "../../components/Button/Button";
+import { View } from "react-native";
+import { LoginScreenProps } from '../RouteProps';
 
-export const Login = () => {
+
+export const Login = (props: LoginScreenProps) => {
+  const { navigation } = props;
+
   return (
-    <div>
-      <Button>Login with Maiar</Button>
-    </div>
+    <View>
+     <Button onPress={ () => {navigation.navigate('Home'); console.log('click');} }>Login with Maiar</Button>
+    </View>
   )
 }

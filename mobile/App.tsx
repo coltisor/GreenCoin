@@ -1,10 +1,26 @@
+import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
-import { Map } from "./src/screens/Map/Map";  
+import {Login} from "./src/screens/Login/Login";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Home } from "./src/screens/Home/Home";
+import {Map} from "./src/screens/Map/Map";
+import {Rides} from "./src/screens/Rides/Rides";
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
  
   return (
-    <Map />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home}  options={{headerLeft: null}}/>
+        <Stack.Screen name="Map" component={Map} />
+        <Stack.Screen name="Rides" component={Rides}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
