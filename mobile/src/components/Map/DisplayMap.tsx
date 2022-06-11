@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
 import H from "@here/maps-api-for-javascript";
+
 import { useEffect } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 
 export const DisplayMap = () => {
-    const apiKey = "VydPmif68dXoHyntRnVzyFQh9ND9D1C7mCrtHEnyKH4"
-    const [currentLocation , setCurrentLocation] = useState<any>(null)
+    const apiKey = "VydPmif68dXoHyntRnVzyFQh9ND9D1C7mCrtHEnyKH4";
+    const [currentLocation , setCurrentLocation] = useState<any>(null);
 
     const mapRef = useRef<HTMLElement>();
 
