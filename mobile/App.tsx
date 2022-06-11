@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={Home} options={{ title:"Welcome, @rider", headerLeft: null }} />
         <Stack.Screen name="Map" component={Map} />
-        <Stack.Screen name="Ride" component={Ride} />
+        <Stack.Screen name="Ride" component={Ride} options={{ title:"Ride safe, ride green", headerLeft: null }}/>
         <Stack.Screen name="Rides" component={Rides} />
       </Stack.Navigator>
     </NavigationContainer>
