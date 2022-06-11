@@ -4,13 +4,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 type ButtonProps = {
   type?: "default" | "primary";
+  onPress: () => void;
   children?: string;
 };
 
 export const Button = (props: ButtonProps) => {
-  const { type = "primary", children } = props;
+  const { type = "primary", children, onPress } = props;
 
-  return <PaperButton mode="contained">{ children }</PaperButton>;
+  return <PaperButton mode="contained" onPress={onPress}>{ children }</PaperButton>;
 };
 
 const styles = StyleSheet.create({

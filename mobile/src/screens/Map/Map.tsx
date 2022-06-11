@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { View } from "react-native";
+import {MapScreenProps} from "../RouteProps";
 
-export const Map = () => {
+export const Map = (props: MapScreenProps) => {
+  console.log('MAP');
   return (
-    <div>Map</div>
+    <View>Map</View>
   )
 }
