@@ -1,15 +1,19 @@
 import React from 'react';
-import { View } from "react-native";
-import { Button } from 'react-native-paper';
-import { DisplayMap } from '../../components/Map/DisplayMap';
+import { View, Text} from "react-native";
 import {MapScreenProps} from "../RouteProps";
+
+import MapDisplay from '../../components/Map/MapDisplay';
+
+
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
 export const Map = (props: MapScreenProps) => {
   console.log('MAP');
+
+
   return (
-   // <View><Button>Text</Button></View>
-   //ewjdbwefhbewuiginwkelfhqpwiejfdk
-   //some text
-     <DisplayMap/>
+   
+   <View><Text>erferferf</Text></View>
+  
   )
 }

@@ -37,5 +37,6 @@
   "installConfig": {
     "hoistingLimits": "workspaces"
   },
-  "private": true
+  "private": true,
+  "bundle": "rollup --config rollup.config.js"
 }
