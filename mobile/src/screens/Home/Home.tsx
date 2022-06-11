@@ -10,7 +10,8 @@ export const Home = (props: HomeScreenProps) => {
     <View>
       <Button onPress={ () => {navigation.push('Rides'); console.log('click');} }>My past rides</Button>
 
-      <Button onPress={ () => {navigation.push("Rides"); console.log('click');} }>New Ride</Button>
+      <Button onPress={ () => {navigation.push("Map"); console.log('click');} }>New Ride</Button>
+
     </View>
   )
 }
