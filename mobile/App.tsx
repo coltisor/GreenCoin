@@ -7,24 +7,28 @@ import { Home } from "./src/screens/Home/Home";
 import {Map} from "./src/screens/Map/Map";
 import {Rides} from "./src/screens/Rides/Rides";
 import {Ride} from "./src/screens/Ride/Ride";
+import { RideV2 } from "./src/screens/Ride/RideV2";
 
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 
+
+  //options={{ title:"Welcome, @rider", headerLeft: null }}
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={Home} options={{ title:"Welcome, @rider", headerLeft: null }} />
-        <Stack.Screen name="Map" component={Map} />
-        <Stack.Screen name="Ride" component={Ride} options={{ title:"Ride safe, ride green", headerLeft: null }}/>
-        <Stack.Screen name="Rides" component={Rides} />
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Stack.Screen name="Map" component={Map}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Ride" component={Ride}  options={{ headerShown: false }}/>
+        <Stack.Screen name="RideV2" component={RideV2}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Rides" component={Rides}  options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+} 
 
 const styles = StyleSheet.create({
   container: {
