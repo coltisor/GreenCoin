@@ -5,7 +5,7 @@ import { white } from "react-native-paper/lib/typescript/styles/colors";
 import { colors } from "../../styles/colors";
 
 type ButtonProps = {
-  type?: "default" | "primary" | "fab" | "fabRed";
+  type?: "default" | "primary" | "fab" | "fabRed" | "fabBig";
   onPress?: () => void;
   children?: string;
   style?: any;
@@ -29,21 +29,29 @@ export const Button = (props: ButtonProps) => {
         text: styles.fabText,
       }
     }
+    if (type === "fabBig") {
+      return {
+        bg: styles.fab2Bg,
+        fab: styles.fab2,
+        text: styles.fabText,
+      }
+    }
   }
 
   return (
-    <View style={{ ...getStyle()?.bg, ...(style ?? {})}}>
+    <View style={{ ...getStyle()?.bg, ...(style ?? {}) }}>
       <TouchableOpacity
         activeOpacity={0.5} 
         onPress={() => { onPress && onPress(); }}
-        style={getStyle()?.fab}>
+        style={{ ...getStyle()?.fab }}>
           <Text style={getStyle()?.text}>{children}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const fabSize: number = 98;
+const fabSize: number = 100;
+const fab2Size: number = 130;
 const styles = StyleSheet.create({
   fabBg: {
     width: fabSize,
@@ -51,7 +59,9 @@ const styles = StyleSheet.create({
     borderRadius: fabSize,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.p600,
+    backgroundColor: "black",
+    borderWidth: 5,
+    borderColor: "#A4ECA2",
   },
   fab: {
     width: fabSize,
@@ -59,16 +69,19 @@ const styles = StyleSheet.create({
     borderRadius: fabSize,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.p500,
+    backgroundColor: "#4DB146",
+    borderWidth: 5,
+    borderColor: "#A4ECA2",
   },
-
   fabBgRed: {
     width: fabSize,
     height: fabSize,
     borderRadius: fabSize,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "red",
+    backgroundColor: "black",
+    borderWidth: 5,
+    borderColor: "#F1958F",
   }, 
   fabRed: {
     width: fabSize,
@@ -76,10 +89,30 @@ const styles = StyleSheet.create({
     borderRadius: fabSize,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "red",
+    backgroundColor: "#EF4135",
+    borderWidth: 5,
+    borderColor: "#F1958F",
   }, 
+
+  fab2Bg: {
+    width: fab2Size,
+    height: fab2Size,
+    borderRadius: fab2Size,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.p600,
+  },
+  fab2: {
+    width: fab2Size,
+    height: fab2Size,
+    borderRadius: fab2Size,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.p500,
+  },
   fabText: {
     fontSize: 20,
+    color: "white"
   },
   fabRedText: {
     color: colors.white,

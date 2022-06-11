@@ -55,12 +55,11 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   card: {
-    flex: 1,
     backgroundColor: "#5FD068",
     paddingVertical: 8,
     paddingHorizontal: 16,
     flexDirection: "row",
-    gap: 8,
+    marginBottom: 8,
     justifyContent: "space-between",
     alignItems: "center"
   },

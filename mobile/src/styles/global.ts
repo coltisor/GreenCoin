@@ -1,23 +1,26 @@
 import { StyleSheet } from 'react-native';
+import { colors } from "./colors";
 
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
 
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-
-    gap: 32,
+    paddingVertical: 150,
   },
   containerHome: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.gray,
   },
   primaryButton: {
-    color: "#5FD068",
-    marginLeft : 5
-  ,fontWeight : "bold" 
+    width : 255,
+    margin : 5, 
+    height : 50,
+    borderRadius : 50,
+    alignItems : "center",
+    justifyContent: "center",
 
   }
 });

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { View } from "react-native";
 import { RideScreenProps } from "../RouteProps";
 import MapView, { Polyline, Marker } from 'react-native-maps';
-import { StyleSheet, Text, Dimensions } from 'react-native';
+import { StyleSheet, Text, Dimensions, Image } from 'react-native';
 import { Provider, Modal, Portal, Avatar } from 'react-native-paper';
 import { colors } from "../../styles/colors";
 import { Button } from "../../components/Button/Button";
@@ -40,7 +40,7 @@ export const Ride = (props: RideScreenProps) => {
     
     const interval = setInterval(() => {   
       updateLocation(); 
-    }, 1000);
+    }, 3000);
 
     return () => {
       setRoute([]);
@@ -50,6 +50,7 @@ export const Ride = (props: RideScreenProps) => {
 
   const updateLocation = () => {
     console.log('CO');
+
     (async () => {
       try {
         let { status } = await Location.requestForegroundPermissionsAsync();
@@ -178,18 +179,19 @@ export const Ride = (props: RideScreenProps) => {
         <Portal>
           <Modal visible={started === 2} dismissable={false} contentContainerStyle={styles.modalContainer }>
             <View style={styles.modalMint}>
-              <Text style={{...{marginBottom: 16, fontSize: 24}}}>M I N T I N G</Text>
+                <Image style={{  marginBottom: 8,height: 45, width: 45, backgroundColor: "#4DB146", borderRadius: 45 }} source={require('./Coin.png')} />
+              <Text style={{...{ fontSize: 24}}}>M I N T I N G</Text>
               <Text style={{...{fontSize: 18}}}>Please wait...</Text>
             </View>
           </Modal>
 
           <Modal visible={started === 3} dismissable={false} contentContainerStyle={styles.modalContainer }>
             <View style={styles.modal}>
-              <Text style={{...{marginBottom: 16, fontSize: 24, color: colors.p600, fontWeight: "bold"}}}>C O N G R A T S !</Text>
+              <Text style={{...{marginBottom: 16, fontSize: 24, color: colors.btn, fontWeight: "bold"}}}>C O N G R A T S !</Text>
               <Text style={{ ...{ marginBottom: 16, fontSize: 18 } }}>{"You received"}</Text>
               <View style={{ marginBottom: 16, flexDirection: "row", alignItems: "center", justifyContent:"center"}}>
-                <Avatar.Text size={64} label={green.toString()} color={colors.white} style={{  ...styles.green, marginRight: 8}} />
-                <Text style={{ ...{ fontSize: 18, color: colors.p600 } }}>{"GreenCoins"}</Text>
+                <Avatar.Text size={64} label={green.toString()} color={colors.white} style={{  ...styles.green}} />
+                <Image style={{ position: "absolute", right: -10, bottom: -10, height: 45, width: 45, backgroundColor: "#4DB146", borderRadius: 45 }} source={require('./Coin.png')} />
               </View>
               <View style={{flexDirection: "row", alignItems: "center"}}>
                 <Text style={{ ...{ fontSize: 18 } }}>{"For "}</Text>
@@ -199,12 +201,15 @@ export const Ride = (props: RideScreenProps) => {
             </View>
 
             <PrimaryButton
+              uppercase={false}
               mode="contained"
-              color={colors.p500}
+              color={colors.btn}
               onPress={() => navigation.navigate('Home')}
               compact={true}
               style={globalStyles.primaryButton}>
-              Continue
+              <Text style={{ fontSize: 20, color: colors.white }}>
+                Finish
+              </Text>
             </PrimaryButton>
           </Modal>
         </Portal>
@@ -241,7 +246,7 @@ const styles = StyleSheet.create({
   modal: {
     backgroundColor: colors.white,
     padding: 20,
-    borderRadius: 8,
+    borderRadius: 16,
     width: "80%",
     alignSelf: "center",
     marginBottom: "10%",
@@ -255,14 +260,19 @@ const styles = StyleSheet.create({
     width: 218,
     height: 218,
     borderRadius: 218,
-    borderWidth: 15,
+    borderWidth: 18,
     borderColor: "#D2F5D1",
     backgroundColor: colors.white,
     justifyContent: "center",
     alignItems: "center",
   },
   green: {
-    backgroundColor: colors.p500,
+    height: 100,
+    width: 100,
+    borderRadius: 100,
+    backgroundColor: colors.btn,
+    borderWidth: 4,
+    borderColor: "#A4ECA2"
   },
 });
 

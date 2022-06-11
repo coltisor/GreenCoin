@@ -6,4 +6,7 @@ export const colors = {
   p600: "#14C38E",
   white: "white",
   dark: "black",
+  btn: "#4DB146",
+  gray: "#E9EDEE",
+  green: "#A4ECA2"
 }

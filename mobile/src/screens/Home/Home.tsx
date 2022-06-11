@@ -1,8 +1,9 @@
 import React from 'react'
 import {HomeScreenProps} from "../RouteProps";
 import { Button  } from "react-native-paper";
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import { globalStyles } from "../../styles/global";
+import { Button as RoundedButton } from "../../components/Button/Button";
 
 import { colors } from '../../styles/colors';
 
@@ -16,37 +17,48 @@ export const Home = (props: HomeScreenProps) => {
       <View style={styles.balance}>
         
         <View style={styles.balanceLogo}>
+          <Image source={require('./Coin.png')} />
         </View>
-        <Text style={styles.balanceText}>{ greenAmount + " GreenCoin"}</Text>
+
+        <View>
+          <Text style={{ fontSize: 18}}>You have</Text>
+          <Text style={styles.balanceText}>{ greenAmount + " GreenCoin"}</Text>
+        </View>
       </View>
 
       <View style={ styles.buttonsContainer }>
-        <Button
-          mode="contained"
-          icon= "logout"
-          color="white"
-          onPress={() => navigation.push('Login')}
-          style={styles.buttonsActions }
-          >
-            <Text style={styles.buttonsActionsText }> Log Out </Text>
+
+        <Image style={{ width: 327, height: 295 }} source={require('./Illustr.png')} />
         
-          </Button>
+        <View style={{marginTop: -30}}>
           <Button
             mode="contained"
-            icon="bike" 
-            color= {colors.p300}
+            uppercase={false}
+            color= {colors.green}
             style={styles.buttonsActions }
             onPress={() => navigation.push('Rides')}>
-            <Text style={styles.buttonsActionsText }> My past rides</Text>
+            <Text style={{ fontSize: 20 }}>My past rides</Text>
           </Button>
-       </View>
 
-       <View style ={styles.newRideContainer}>
-          <TouchableOpacity
-            onPress={() => { navigation.push("Ride") }}
-            style={styles.newRideButton}>
-            <Text  style={styles.newRideButtonText}>New Ride</Text>
-          </TouchableOpacity>
+          <Button
+            mode="contained"
+            uppercase={false}
+            color= {colors.btn}
+            style={styles.buttonsActions }
+            onPress={() => navigation.push('Ride')}>
+            <Text style={{ fontSize: 20, color: colors.white }}>New Ride</Text>
+          </Button>
+
+          <Button
+              mode="text"
+              color="black"
+              uppercase={false}
+              onPress={() => navigation.push('Login')}
+              style={styles.buttonsActions }
+              >
+            <Text style={{ fontSize: 20 }}>Log Out</Text>
+          </Button> 
+        </View>
        </View>
     </View>
   )
@@ -54,66 +66,46 @@ export const Home = (props: HomeScreenProps) => {
 
 const styles = StyleSheet.create({
   balance: {
-    height : "15%",
-    backgroundColor :colors.p300,
-    display :"flex",
+    height : 113,
+    backgroundColor: colors.green,
     alignItems : "center",
-    justifyContent :  "center",
-    flexDirection: 'row'
+    flexDirection: 'row',
+    paddingHorizontal: 20
   },
   balanceText :{
-    fontSize : 25,
-    fontWeight : '700',
-    color :"white",
-    textShadowOffset :  { width : 2 , height : 3 },
-    textShadowColor :  "rgba(27,27,27,0.6)"
+    fontSize : 30,
+    fontWeight : 'normal',
   },
   balanceLogo : {
-    width :  "70px",
-    height : "70px",
     backgroundColor : "white",
     borderRadius : 50,
-    marginRight : "10px",
-    display : 'flex',
+    marginRight : 10,
     alignItems : "center",
     justifyContent : "center"  
   } ,
   balanceLogoText : { 
     fontSize: 40,
-    color : colors.p300   
+    color : colors.green   
   } ,
   buttonsContainer: {
-    width :  "100%",
-    height:"60%",
+    height: "40%",
     padding : 5,
     display :"flex",
     alignItems :"center",
     marginTop : 40
   },
   buttonsActions : {
-    width : "80%",
+    width : 255,
     margin : 5, 
-    height : "50px",
+    height : 50,
     borderRadius : 50,
-    display :"flex",
     alignItems : "center",
-    justifyContent :"center"
-  },
-  buttonsActionsText : {
+    justifyContent: "center",
+    marginBottom: 16
   },
   newRideContainer : {
-    display :"flex",
     alignItems :"center",
-    justifyContent : "center",
-  },
-  newRideButton : {
-    borderRadius : 50,
-    width : "100px",
-    height :"100px",
-    backgroundColor : colors.p300,
-    display : "flex",
-    alignItems : "center",
-    justifyContent : "center"
+    justifyContent: "center",
   },
   newRideButtonText :{
     fontSize : 17,
@@ -121,8 +113,5 @@ const styles = StyleSheet.create({
     textShadowOffset :  { width : 1 , height : 1 },
     textShadowColor :  "rgba(27,27,27,0.6)",
     fontWeight : '700',
-
-  
-
   }
 });

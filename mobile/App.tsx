@@ -20,11 +20,9 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="Map" component={Map}  options={{ headerShown: false }}/>
-        <Stack.Screen name="Ride" component={Ride}  options={{ headerShown: false }}/>
-        <Stack.Screen name="RideV2" component={RideV2}  options={{ headerShown: false }}/>
-        <Stack.Screen name="Rides" component={Rides}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Home" component={Home} options={{ title:"Welcome, Rider", headerLeft: null }} />
+        <Stack.Screen name="Ride" component={Ride}  options={{ title:"Green Ride", headerShown: true }} />
+        <Stack.Screen name="Rides" component={Rides}  options={{ title:"My rides", headerShown: true }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
