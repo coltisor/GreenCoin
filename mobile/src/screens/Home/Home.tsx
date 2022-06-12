@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {HomeScreenProps} from "../RouteProps";
 import { Button  } from "react-native-paper";
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
@@ -11,6 +11,21 @@ import { colors } from '../../styles/colors';
 export const Home = (props: HomeScreenProps) => {
   const { navigation } = props;
   let greenAmount: number = 5;
+
+  ///accounts/{address}/tokens
+
+  const ADDRESS = "erd1z3d4ntcly8n6r5dzyv83wfe6gq7542qaz2g0zsv7nk3ux7efttkqwt8wsu";
+  const getGreenAmount = async () => {
+    let promise = await fetch("https://devnet-api.elrond.com/accounts/" + ADDRESS, {
+      method: 'GET',
+    });
+    let result = await promise.json();
+    console.log(result);
+  }
+
+  useEffect(() => {
+    getGreenAmount();
+  }, []);
 
   return (
     <View style={globalStyles.containerHome}>

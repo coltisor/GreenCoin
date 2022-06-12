@@ -24,7 +24,7 @@ export const Ride = (props: RideScreenProps) => {
 
   const mapRef = useRef<any>(null);
 
-  const ADDRESS = "erd14gxmyvmfd9j60sddwszhrhxktc5vn26gz296t0mjsvh44fjuvmxq0dxtev";
+  const ADDRESS = "erd1z3d4ntcly8n6r5dzyv83wfe6gq7542qaz2g0zsv7nk3ux7efttkqwt8wsu";
 
   /**
    * RECORD BTN
@@ -134,7 +134,7 @@ export const Ride = (props: RideScreenProps) => {
         'Content-Type': 'application/json;charset=utf-8'
       },
       body: JSON.stringify({
-        distance: 1000,
+        distance: distanceCalc,
         address: ADDRESS,
       }),
     });
@@ -142,7 +142,7 @@ export const Ride = (props: RideScreenProps) => {
     let result = await promise.json();
     console.log(result);
     
-    setGreen(Math.floor(Math.random() * 10) + 5);
+    setGreen(result.earned);
     setStarted(3);
   }
 
